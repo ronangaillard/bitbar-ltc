@@ -1,4 +1,4 @@
-i#!/bin/bash
+#!/bin/bash
 # <bitbar.title>LTC Price</bitbar.title>
 # <bitbar.version>v1.0</bitbar.version>
 # <bitbar.author>ronangaillard</bitbar.author>
