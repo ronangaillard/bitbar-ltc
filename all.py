@@ -27,7 +27,7 @@ icons = { 'ethereum': 'iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAA
 result = []
 for currency in data:
   try: 
-    result.append("{:.2f}".format(float(currency['price_eur'])) + b"\xe2\x82\xac ".decode('utf8') + currency['percent_change_24h'] + '% | image=' + icons[currency['id']])
+    result.append("{:.2f}".format(float(currency['price_eur'])) + b"\xe2\x82\xac\t".decode('utf8') + currency['percent_change_24h'] + '% | image=' + icons[currency['id']])
   except:
     pass
 
