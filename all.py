@@ -1,4 +1,4 @@
-#!/usr/local/bin/python
+#!/usr/bin/env PYTHONIOENCODING=UTF-8 /usr/local/bin/python
 # coding: latin-1
 # <bitbar.title>LTC Price</bitbar.title>
 # <bitbar.version>v1.0</bitbar.version>
@@ -7,7 +7,7 @@
 # <bitbar.desc>Display the spot EUR prices of main cryptocurrencies</bitbar.desc>
 
 
-import urllib, json
+import urllib, json, locale
 url = "https://api.coinmarketcap.com/v1/ticker/?convert=EUR"
 response = urllib.urlopen(url)
 data = json.loads(response.read())
@@ -27,7 +27,7 @@ icons = { 'ethereum': 'iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAA
 result = []
 for currency in data:
   try: 
-    result.append("{:.2f}".format(float(currency['price_eur'])) + ' ' + currency['percent_change_24h'] + '% | image=' + icons[currency['id']])
+    result.append("{:.2f}".format(float(currency['price_eur'])) + b"\xe2\x82\xac ".decode('utf8') + currency['percent_change_24h'] + '% | image=' + icons[currency['id']])
   except:
     pass
 
